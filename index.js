@@ -32,10 +32,12 @@ for (const box of boxes) {
 
 drainBtn.onclick = () => {
   canInput = false;
+  drainBtn.disabled = true;
   drainBtn.style.opacity = 0;
   drainBtn.nextElementSibling.style.opacity = 1;
   drain().then(() => {
     canInput = true;
+    drainBtn.disabled = false;
     drainBtn.removeAttribute('style');
     drainBtn.nextElementSibling.removeAttribute('style');
   })
